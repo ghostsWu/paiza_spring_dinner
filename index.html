@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, height=device-height">
+	<title>御匾會金雞迎福新春晚宴</title>
+	<style type="text/css">
+		html{
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+
+		body{
+			width: 100%;
+			height: 100%;
+			max-width: 480px;
+			padding: 0;border:0;margin: 0;
+			background-color: #b42223;
+			margin: 0 auto;
+			overflow: hidden;
+			font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+			font-weight: 300;
+			font-size: 14px;
+			line-height: 1.1;
+		}
+
+		img{
+			max-width: 100%;
+		}
+
+		.text{
+			display: none;
+		}
+
+		.cover{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 999;
+			background-image: url(images/e_cover.jpg);
+			background-size: 100% auto;
+			background-position: center center;
+			-webkit-transform: translate(0px, 0px);
+			        transform: translate(0px, 0px);
+
+			-webkit-transition-property: -webkit-transform;
+
+			transition-property: -webkit-transform;
+
+			transition-property: transform;
+
+			transition-property: transform, -webkit-transform;
+			-webkit-transition-duration: 1.2s;
+			        transition-duration: 1.2s;
+
+
+		}
+
+		.cover.hidden{
+			-webkit-transform: translate(0px, -100%);
+			        transform: translate(0px, -100%);
+		}
+
+		.invitation{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 99;
+
+			overflow: hidden;
+		}
+
+		.invitation ul{
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+
+		.invitation .scene li{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			margin: 0;
+			padding: 0;
+			padding: 40px;
+			background-size: 100% auto;
+			background-position: center bottom;
+			margin-left: -40px;
+			margin-top: -20px;
+			background-repeat: no-repeat;
+		}
+
+		.invitation .scene .bg_9{background-image: url(images/e_9.png);}
+		.invitation .scene .bg_8{background-image: url(images/e_8.png);}
+		.invitation .scene .bg_7{
+			background-image: url(images/e_7.png);
+			
+		}
+		.invitation .scene .bg_6{background-image: url(images/e_6.png);}
+		.invitation .scene .bg_5{
+			background-image: url(images/e_5.png);
+			background-size: 100% 100%;
+		}
+		.invitation .scene .bg_4{background-image: url(images/e_4.png);}
+		.invitation .scene .bg_3{
+			background-image: url(images/e_3.png);
+			background-position: center top;
+		}
+
+		.text{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			z-index: 100;
+			margin-top: 3%;
+			text-align: center;
+			color: #f3cc88;
+			box-sizing:border-box;
+		}
+
+		
+		.text p{
+			padding: 0 17%;
+			margin-bottom:10px;
+			margin-top:10px;
+		}
+
+		.text .tc{
+			margin-bottom: 3px;
+			font-size: 2.4em;
+			
+		}
+
+		.text .en{
+			font-size: 2.4em;
+		}
+
+		.text .tc + .en{
+			margin-top: 0;
+		}
+
+		.text .title{
+			font-size: 3.5em;
+			/*font-size: 3.6vh;*/
+			margin-top: 13px;
+
+		}
+		
+		.text .en{
+			font-family: "Times New Roman","Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+		}
+
+
+
+		/*动画部分*/
+		.text p{
+			-webkit-transition: opacity .8s;
+			transition: opacity .8s;
+			opacity: 0;
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+		}
+
+		.container{
+			background-color: #772458;
+			-webkit-transition: background-color 3s;
+			transition: background-color 3s;
+			-webkit-transition-delay: 1s;
+			        transition-delay: 1s;
+		}
+
+		.container li{
+			-webkit-transition: opacity .8s;
+			transition: opacity .8s;
+			opacity: 0;
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+		}
+
+		.text.running p{
+			opacity: 1;
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+		}
+
+		.text.running+.container li{
+			opacity: 1;
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+		}
+
+		.text.running+.container{
+			background-color: transparent;
+		}
+
+		.text p:nth-child(1){-webkit-transition-delay: 	0.00s;transition-delay: 	0.00s;}
+		
+		.container li:nth-child(1){-webkit-transition-delay: 	0.00s;transition-delay: 	0.00s;}
+
+
+
+		
+.container li:nth-child(7)	{-webkit-transition-delay: 1.0s;transition-delay: 1.0s;}
+.container li:nth-child(6)	{-webkit-transition-delay: 1.2s;transition-delay: 1.2s;}
+.container li:nth-child(5)	{-webkit-transition-delay: 1.4s;transition-delay: 1.4s;}
+.container li:nth-child(4)	{-webkit-transition-delay: 1.6s;transition-delay: 1.6s;}
+.container li:nth-child(3)	{-webkit-transition-delay: 1.8s;transition-delay: 1.8s;}
+.container li:nth-child(2)	{-webkit-transition-delay: 2.0s;transition-delay: 2.0s;}
+.container li:nth-child(1)	{-webkit-transition-delay: 2.2s;transition-delay: 2.2s;}
+.text p:nth-child(1	)		{-webkit-transition-delay: 2.4s;transition-delay: 2.4s;}
+.text p:nth-child(2	)		{-webkit-transition-delay: 2.6s;transition-delay: 2.6s;}
+.text p:nth-child(3	)		{-webkit-transition-delay: 2.8s;transition-delay: 2.8s;}
+.text p:nth-child(4	)		{-webkit-transition-delay: 3.0s;transition-delay: 3.0s;}
+.text p:nth-child(5	)		{-webkit-transition-delay: 3.2s;transition-delay: 3.2s;}
+.text p:nth-child(6	)		{-webkit-transition-delay: 3.4s;transition-delay: 3.4s;}
+.text p:nth-child(7	)		{-webkit-transition-delay: 3.6s;transition-delay: 3.6s;}
+.text p:nth-child(8	)		{-webkit-transition-delay: 3.8s;transition-delay: 3.8s;}
+.text p:nth-child(9	)		{-webkit-transition-delay: 4.0s;transition-delay: 4.0s;}
+.text p:nth-child(10)		{-webkit-transition-delay: 4.2s;transition-delay: 4.2s;}
+.text p:nth-child(11)		{-webkit-transition-delay: 4.4s;transition-delay: 4.4s;}
+.text p:nth-child(12)		{-webkit-transition-delay: 4.6s;transition-delay: 4.6s;}
+.text p:nth-child(13)		{-webkit-transition-delay: 4.8s;transition-delay: 4.8s;}
+.text p:nth-child(14)		{-webkit-transition-delay: 5.0s;transition-delay: 5.0s;}
+
+.weixintop{
+	position: absolute;
+	left: -200%;
+	top: -200%;
+}
+
+	</style>
+</head>
+
+<body>
+	<img class="weixintop" src="images/weixintop.jpg">
+	<div class="cover"></div>
+	<div class="text">
+		<div>
+			<p class="tc title">誠意邀請閣下出席<br />金雞迎福新春晚宴</p>
+			<p class="en">We cordially invite you to attend <br>Paiza Spring Dinner</p>
+
+			<p class="tc">地點: 巴黎人宴會廳</p>
+			<p class="en">Venue: The Parisian Ballroom</p>
+
+			<p class="tc">日期：2017 年 2 月 18 日</p>
+			<p class="en">Date: 18 Feb 2017</p>
+
+			<p class="tc">酒會：晚上七時至七時三十分</p>
+			<p class="en">Cocktail Section: 7:00 – 7:30pm</p>
+
+			<p class="tc">晚宴：晚上七時三十分至九時</p>
+			<p class="en">Dinner: 7:30 – 9:00pm</p>
+
+			<p class="tc">衣著要求：商務悠閒</p>
+			<p class="en">Dress Code: Smart Casual</p>
+
+			<p class="tc end">我們業務拓展高級主任跟您聯繫，<br /> 請您了解更多詳情。</p>
+			<p class="en">Our Business Development team will contact you for further details.</p>
+		</div>
+	</div>
+	<div id="container" class="container invitation">
+		<ul id="scene" class="scene">
+			<li class="bg_9 layer" data-depth="-0.03"></li>
+			<li class="bg_8 layer" data-depth="-0.05"></li>
+			<li class="bg_7 layer" data-depth="-0.08"></li>
+			<li class="bg_6 layer" data-depth="-0.11"></li>
+			<li class="bg_5 layer" data-depth="0.00"></li>
+			<li class="bg_4 layer" data-depth="0.2"></li>
+			<li class="bg_3 layer" data-depth="0.30"></li>
+			
+		</ul>
+	</div>
+
+	<script type="text/javascript">
+		document.querySelector(".cover").onclick = function(){
+			document.querySelector(".cover").className = document.querySelector(".cover").className + " hidden";
+			document.querySelector(".text").className = document.querySelector(".text").className + " running"
+		}
+		var h = window.innerHeight;
+		console.log( h + ".." + h * 0.01 + "px" );
+
+		document.querySelector(".text div").style.fontSize =  h * 0.01 + "px";
+
+		window.onload = function(){
+			document.querySelector(".text").style.display = "block";
+		}
+	</script>
+
+	<!-- Scripts -->
+	<script src="js/parallax.min.js"></script>
+	<script>
+
+	// Pretty simple huh?
+	var scene = document.getElementById('scene');
+	var parallax = new Parallax(scene);
+
+	</script>
+
+
+</body>
+</html>
